@@ -1,4 +1,6 @@
-SELECT products.name AS 'Product Name', categories.name AS 'Category Name'
-FROM products
-LEFT JOIN product_categories ON products.id = product_categories.product_id
-LEFT JOIN categories ON product_categories.category_id = categories.id;
+SELECT p.Name, c.Name
+FROM Products AS p
+LEFT OUTER JOIN ProductCategory AS pc
+ON p.Id = pc.ProductId
+LEFT OUTER JOIN Categories AS c
+ON c.Id = pc.CategoryId
